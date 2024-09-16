@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/pages/Account.dart';
 import 'package:learn_flutter/pages/CartPage.dart';
 import 'package:learn_flutter/pages/ItemPage.dart';
 import 'package:learn_flutter/pages/LoginPage.dart';
+import 'package:learn_flutter/pages/RegisterPage.dart';
 import './pages/HomePage.dart'; 
 
 void main() {
@@ -21,6 +23,9 @@ class MyApp extends StatelessWidget {
         'cartPage': (context) => CartPage(),
         'itemPage': (context) => ItemPage(),
         'loginPage': (context) => LoginPage(),
+        'account': (context) => Account(),
+        'registerPage': (context) => RegisterPage(),
+        
         
       
       },

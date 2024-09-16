@@ -1,5 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/pages/Account.dart';
 import 'package:learn_flutter/pages/CartPage.dart';
 import 'package:learn_flutter/pages/LoginPage.dart';
 import 'package:learn_flutter/widgets/CategoriesWidget.dart';
@@ -56,6 +57,17 @@ class HomePage extends StatelessWidget {
                 
               ],),
             ),
+            
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15), 
+                child: Image(
+                  image: AssetImage('assets/banner/slider.jpg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
 
             // Categories title
             Container(
@@ -99,11 +111,86 @@ class HomePage extends StatelessWidget {
               //Item widget
               ItemWidget(),
 
+              Container(
+                alignment: Alignment.center,
+                margin: EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 20,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        shape: BoxShape.circle,
+                      ),
+                      child: Text(
+                        '<',
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                      SizedBox(width: 5), 
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        shape: BoxShape.circle,
+                      ),
+                      child: Text(
+                        '1',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 5), 
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                      ),
+                      child: Text(
+                        '2',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                      SizedBox(width: 5), 
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        shape: BoxShape.circle,
+                      ),
+                      child: Text(
+                        '>',
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
           ],
           ),
+          
         )
       ],
      ),
+
+
       bottomNavigationBar: CurvedNavigationBar(
         onTap: (index) {
           // Handle button tap
@@ -123,13 +210,13 @@ class HomePage extends StatelessWidget {
             case 2:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => LoginPage()),
+                MaterialPageRoute(builder: (context) => Account()),
               );
               break;
             case 3:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => CartPage()),
+                MaterialPageRoute(builder: (context) => Account()),
               );
               break;
           }

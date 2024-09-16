@@ -17,19 +17,9 @@ class LoginAppBar extends StatelessWidget {
             color: Colors.blue,
             ),
           ),
-          Padding(
-            padding: EdgeInsets.only(left: 20),
-          ),
+          
           // Spacer(),
-          Text(
-            "Login",
-            style: TextStyle(
-              fontSize: 23,
-              fontWeight: FontWeight.bold,
-              color: Colors.blue,
-              
-            ),
-          ),
+          
           Spacer(),
           Icon(
             Icons.more_vert,

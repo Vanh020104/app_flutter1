@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/widgets/LoginAppBar.dart';
 
-class LoginPage extends StatelessWidget {
+class RegisterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +17,47 @@ class LoginPage extends StatelessWidget {
             color: const Color.fromARGB(255, 235, 235, 235),
             child: Column(
               children: [
-                Text("Login Page", 
+                Text("Register Page", 
                 style: TextStyle(
-                  fontSize: 27,
+                  fontSize: 25,
                   fontWeight: FontWeight.bold,
                   color: Colors.blue,
                 ),),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 20, top: 10),
+                  child: Container(
+                    width: 140, 
+                    height: 140,
+                    decoration: BoxDecoration(
+                      color: Colors.white, 
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: const Color.fromARGB(255, 92, 174, 240), // Màu viền
+                        width: 3.0, // Độ dày của viền
+                      ),
+                    ),
+                    child: Center(
+                      child: Icon(
+                        Icons.person,
+                        size: 100,
+                        color: const Color.fromARGB(255, 87, 169, 236),
+                      ),
+                    ),
+                  ),
+                ),
+
+
+
+                Padding(padding: EdgeInsets.only(top: 15),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      hintText: "User Name",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                  ),
+                ),
                 Padding(padding: EdgeInsets.only(top: 15),
                   child: TextFormField(
                     decoration: InputDecoration(
@@ -50,7 +85,7 @@ class LoginPage extends StatelessWidget {
                     width: double.infinity,
                     child: ElevatedButton(
                     onPressed: (){},
-                    child: Text("Login",
+                    child: Text("Register",
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -67,50 +102,8 @@ class LoginPage extends StatelessWidget {
                   ),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.all(15),
-                  child: Text("OR",
-                    style: TextStyle(
-                      fontSize: 16,
-                     
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 22, vertical: 10),
-                  child: SizedBox(
-                    width: double.infinity, 
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min, 
-                        mainAxisAlignment: MainAxisAlignment.center, 
-                        children: [
-                          Icon(
-                            Icons.facebook, 
-                            color: Colors.white,
-                          ),
-                          SizedBox(width: 10), 
-                          Text(
-                            "Facebook Login",
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(const Color.fromARGB(255, 68, 56, 235)),
-                        padding: MaterialStateProperty.all(EdgeInsets.symmetric(horizontal: 40, vertical: 10)),
-                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        )),
-                      ),
-                    ),
-                  ),
-                ),
+                
+                
               ],
             ),
           
