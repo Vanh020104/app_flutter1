@@ -4,12 +4,12 @@ class Product {
   final String description;
   final double price;
   final String manufacturer;
-  final int stockQuantity;
   final String size;
   final String weight;
+  final int stockQuantity;
   final String createdAt;
   final String updatedAt;
-  final Category category;
+  final List<String> images;
 
   Product({
     required this.productId,
@@ -17,12 +17,12 @@ class Product {
     required this.description,
     required this.price,
     required this.manufacturer,
-    required this.stockQuantity,
     required this.size,
     required this.weight,
+    required this.stockQuantity,
     required this.createdAt,
     required this.updatedAt,
-    required this.category,
+    required this.images,
   });
 
   factory Product.fromJson(Map<String, dynamic> json) {
@@ -32,26 +32,28 @@ class Product {
       description: json['description'],
       price: json['price'],
       manufacturer: json['manufacturer'],
-      stockQuantity: json['stockQuantity'],
       size: json['size'],
       weight: json['weight'],
+      stockQuantity: json['stockQuantity'],
       createdAt: json['createdAt'],
       updatedAt: json['updatedAt'],
-      category: Category.fromJson(json['category']),
+      images: List<String>.from(json['images'].map((image) => image['imageUrl'])),
     );
   }
-}
 
-class Category {
-  final int categoryId;
-  final String categoryName;
-
-  Category({required this.categoryId, required this.categoryName});
-
-  factory Category.fromJson(Map<String, dynamic> json) {
-    return Category(
-      categoryId: json['categoryId'],
-      categoryName: json['categoryName'],
-    );
+  Map<String, dynamic> toJson() {
+    return {
+      'productId': productId,
+      'name': name,
+      'description': description,
+      'price': price,
+      'manufacturer': manufacturer,
+      'size': size,
+      'weight': weight,
+      'stockQuantity': stockQuantity,
+      'createdAt': createdAt,
+      'updatedAt': updatedAt,
+      'images': images.map((image) => {'imageUrl': image}).toList(),
+    };
   }
 }
